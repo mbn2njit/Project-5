@@ -1,6 +1,6 @@
 package com.example.emaillab
 
-class Item(
+data class DisplayItem(
 
     val nameStr: String,
     val moneyStr: String,
