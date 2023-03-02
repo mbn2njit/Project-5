@@ -34,17 +34,17 @@ class DetailActivity : AppCompatActivity() {
             if(link == "")
             {
                 Toast.makeText(
-                    this, "Please input a valid URL for the item", Toast.LENGTH_SHORT).show()
+                    this, "Please input a valid amount of protein for the food", Toast.LENGTH_SHORT).show()
             }
             else if(money == "")
             {
                 Toast.makeText(
-                    this, "Please input a valid price for the item", Toast.LENGTH_SHORT).show()
+                    this, "Please input a valid amount of calories for the food", Toast.LENGTH_SHORT).show()
             }
             else if(thisName == "")
             {
                 Toast.makeText(
-                    this, "Please input a valid name for the item", Toast.LENGTH_SHORT).show()
+                    this, "Please input a valid name for the food", Toast.LENGTH_SHORT).show()
             }
             else {
 

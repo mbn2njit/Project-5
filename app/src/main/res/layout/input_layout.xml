@@ -23,7 +23,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:textSize="15sp"
-        android:text="Price"
+        android:text="Calories"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
-        android:text="Name"
+        android:text="Food name"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +45,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:textSize="15sp"
-        android:text="URL"
+        android:text="G of Protein"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -53,7 +53,7 @@
         android:id="@+id/editTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="15"
         android:inputType="textPersonName"
         android:layout_marginTop="15dp"
         android:hint="Name"
@@ -65,9 +65,9 @@
         android:id="@+id/editTextPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="15"
         android:textSize="10sp"
-        android:hint="Price"
+        android:hint="Calories"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
@@ -77,8 +77,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
-        android:inputType="textPersonName"
-        android:hint="URL"
+        android:inputType="number"
+        android:hint="Protein"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />

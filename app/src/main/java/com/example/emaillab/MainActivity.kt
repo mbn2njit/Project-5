@@ -51,36 +51,6 @@ class MainActivity : AppCompatActivity() {
         //val etName = findViewById<EditText>(R.id.etName)
         button.setOnClickListener{
 
-            //val link = etLink.getText().toString()
-            //val money = etMoney.getText().toString()
-            //val name = etName.getText().toString()
-
-            val link = "jeremy.com"
-            val money = "20"
-            val name = "Jeremy"
-
-            if(link == "")
-            {
-                Toast.makeText(
-                    this, "Please input a valid URL for the item", Toast.LENGTH_SHORT).show()
-            }
-            else if(money == "")
-            {
-                Toast.makeText(
-                    this, "Please input a valid price for the item", Toast.LENGTH_SHORT).show()
-            }
-            else if(name == "")
-            {
-                Toast.makeText(
-                    this, "Please input a valid name for the item", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                val newItem = DisplayItem(name, money, link)
-                items.add(newItem)
-                emailsRV.layoutManager = LinearLayoutManager(this)
-
-
-            }
 
             val intent = Intent(this, DetailActivity::class.java)
             //startActivityForResult(intent, 444123)
