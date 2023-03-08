@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.articlesearch.ItemApplication
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
@@ -46,22 +47,21 @@ class MainActivity : AppCompatActivity() {
 
 
         val button = findViewById<Button>(R.id.button)
+        val buttonTwo = findViewById<Button>(R.id.buttonTwo)
         //val etLink = findViewById<EditText>(R.id.etLink)
         //val etMoney = findViewById<EditText>(R.id.etMoney)
         //val etName = findViewById<EditText>(R.id.etName)
         button.setOnClickListener{
-
-
             val intent = Intent(this, DetailActivity::class.java)
-            //startActivityForResult(intent, 444123)
             startActivity(intent)
-            //super.onActivityResult(444123, 123444, intent)
 
-            //val passedItem = intent.getStringExtra("itemName")
-            //Log.d("myTag", passedItem.toString());
-            //Toast.makeText(this, passedItem.toString(), Toast.LENGTH_SHORT).show()
-                // deal with the item yourself
+        }
 
+        buttonTwo.setOnClickListener{
+            lifecycleScope.launch(Dispatchers.IO)
+            {
+                (application as ItemApplication).db.itemDao().deleteAll()
+            }
         }
 
 

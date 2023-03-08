@@ -3,4 +3,5 @@
     <string name="item_cost">Item Cost</string>
     <string name="button_text">Submit</string>
     <string name="item_link">Item Link</string>
+    <string name="reset">Reset</string>
 </resources>
