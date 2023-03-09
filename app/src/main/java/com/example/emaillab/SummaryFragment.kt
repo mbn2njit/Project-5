@@ -22,6 +22,7 @@ class SummaryFragment : Fragment() {
     private var avgCal: Double = 0.0
     private var maxCal: Double = 0.0
     private var tolProtein: Double = 0.0
+    private var count: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +50,8 @@ class SummaryFragment : Fragment() {
 
         avgCal = 0.0
         maxCal = 0.0
-        tolProtein = 0.0;
+        tolProtein = 0.0
+        count = 0
         Log.d("onVC", "Test log")
         for(item in items)
         {
@@ -58,8 +60,9 @@ class SummaryFragment : Fragment() {
             if(maxCal < item.moneyStr.toDouble())
                 maxCal = item.moneyStr.toDouble()
             tolProtein += item.linkStr.toDouble()
+            count++
         }
-
+        avgCal/=count
         val AvCalTv = view.findViewById<TextView>(R.id.avgCal)
         val MaxCalTv = view.findViewById<TextView>(R.id.maxCal)
         val TolProtTv = view.findViewById<TextView>(R.id.tolProtein)
