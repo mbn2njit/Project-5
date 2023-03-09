@@ -2,7 +2,7 @@
 
 Submitted by: Mason Naphtali
 
-**Name of your app** is a health metrics app that allows users to track ... [TODO] 
+Fitbit part 2 is a health metrics app that allows users to track the food they eat in a day. It tracks calories and protein, and records the averages and totals for some values 
 
 Time spent: **9.5** hours spent in total
 
@@ -28,22 +28,17 @@ Added a reset button for the user to reser all data
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/Rs8UgPv.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with LICEcap
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+This project was just as hard as the last one. I sadly wasn't able to finish it, and the summary counter is unfinished. However, it can be worked around, and it still takes data from the database properly.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Mason Naphtali]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
