@@ -11,7 +11,11 @@ interface ItemDAO
     @Query("SELECT * FROM item_table")
     fun getAll(): Flow <List<ItemEntity>>
 
+    @Query("SELECT price FROM item_table")
+    fun getPrice(): Flow <List<String>>
 
+    @Query("SELECT url FROM item_table")
+    fun getUrl(): Flow <List<String>>
     /*@Query("SELECT * FROM user WHERE uid IN (:userIds)")
     fun loadAllByIds(userIds: IntArray): List<Item>
 

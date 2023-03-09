@@ -5,56 +5,50 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.articlesearch.ItemApplication
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
 
     //lateinit var emails: List<Email>
-    lateinit var items: List<DisplayItem>
+    //lateinit var items: List<DisplayItem>
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
-        val emailsRV = findViewById<RecyclerView>(R.id.emailsRv)
-        var items : MutableList<DisplayItem> = ArrayList()
-        val adapter = ItemAdapter(items)
-        emailsRV.adapter = adapter
-        emailsRV.layoutManager = LinearLayoutManager(this)
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val summaryFragment: Fragment = SummaryFragment()
+        val itemListFragment: Fragment = ItemListFragment()
 
-        lifecycleScope.launch {
-            (application as ItemApplication).db.itemDao().getAll().collect { databaseList ->
-                databaseList.map { entity ->
-                    DisplayItem(
-                        entity.name,
-                        entity.price,
-                        entity.url
-                    )
-                }.also { mappedList ->
-                    items.clear()
-                    items.addAll(mappedList)
-                    adapter.notifyDataSetChanged()
-                }
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            lateinit var fragment: Fragment
+            when (item.itemId) {
+                R.id.action_list -> fragment = itemListFragment
+                R.id.action_summary -> fragment = summaryFragment
             }
+            replaceFragment(fragment)
+            true
         }
 
+        replaceFragment(ItemListFragment())
 
         val button = findViewById<Button>(R.id.button)
         val buttonTwo = findViewById<Button>(R.id.buttonTwo)
-        //val etLink = findViewById<EditText>(R.id.etLink)
-        //val etMoney = findViewById<EditText>(R.id.etMoney)
-        //val etName = findViewById<EditText>(R.id.etName)
         button.setOnClickListener{
             val intent = Intent(this, DetailActivity::class.java)
             startActivity(intent)
-
         }
 
         buttonTwo.setOnClickListener{
@@ -65,6 +59,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun replaceFragment(listFragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.article_frame_layout, listFragment)
+        fragmentTransaction.commit()
     }
 
     /*override fun onResume()
